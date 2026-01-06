@@ -1,0 +1,25 @@
+[dida] 2026/01/06 10:59:58.210412 starting server; data_dir=./data addr=:8080 log_file=./dida.log
+[dida] 2026/01/06 10:59:58.215675 routes registered: /health, /kv/{key}, /internal/replicate, /admin/replicate
+[dida] 2026/01/06 10:59:58.216905 listening on :8080
+[dida] 2026/01/06 11:00:13.933791 shutdown signal received; stopping server
+[dida] 2026/01/06 11:00:13.935845 shutting down HTTP server
+[dida] 2026/01/06 11:00:13.936646 server stopped
+[dida] 2026/01/06 11:00:21.353799 starting server; data_dir=./data addr=:8080 log_file=./dida.log
+[dida] 2026/01/06 11:00:21.355770 routes registered: /health, /kv/{key}, /internal/replicate, /admin/replicate
+[dida] 2026/01/06 11:00:21.356534 listening on :8080
+[dida] 2026/01/06 11:00:30.622215 shutdown signal received; stopping server
+[dida] 2026/01/06 11:00:30.628474 shutting down HTTP server
+[dida] 2026/01/06 11:00:30.629390 server stopped
+[dida] 2026/01/06 11:00:43.028287 starting server; data_dir=./data addr=:8080 log_file=./dida.log
+[dida] 2026/01/06 11:00:43.078800 routes registered: /health, /kv/{key}, /internal/replicate, /admin/replicate
+[dida] 2026/01/06 11:00:43.088298 listening on :8080
+[dida] 2026/01/06 11:04:34.716831 starting server; data_dir=./data addr=:8080 log_file=./dida.log
+[dida] 2026/01/06 11:04:34.763054 routes registered: /health, /kv/{key}, /internal/replicate, /admin/replicate
+[dida] 2026/01/06 11:04:34.763849 listening on :8080
+[dida] 2026/01/06 11:04:34.764597 server run failed: listen tcp :8080: bind: address already in use
+[dida] 2026/01/06 11:04:52.988314 shutdown signal received; stopping server
+[dida] 2026/01/06 11:04:52.993502 shutting down HTTP server
+[dida] 2026/01/06 11:04:52.994551 server stopped
+[dida] 2026/01/06 11:04:59.042375 starting server; data_dir=./data addr=:8080 log_file=./dida.log
+[dida] 2026/01/06 11:04:59.043629 routes registered: /health, /kv/{key}, /internal/replicate, /admin/replicate
+[dida] 2026/01/06 11:04:59.044385 listening on :8080
