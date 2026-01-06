@@ -120,7 +120,7 @@ class DidaServer(ThreadingHTTPServer):
         self.replication_offsets = {}
 
 def run(addr: str, data_dir: str):
-    h, p = addr.split(":") if ':' in addr else (addr, '8080')
+    h, p = addr.split(":") if ':' in addr else (addr, '8000')
     host = h if h else '0.0.0.0'
     port = int(p)
     store = Storage(data_dir)
@@ -135,8 +135,23 @@ def run(addr: str, data_dir: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--addr', default=':8080')
+    parser.add_argument('--addr', default=':8080', help='listen address ("host:port" or ":port")')
     parser.add_argument('--data-dir', default='./data')
+    # legacy / convenience flags accepted by some scripts
+    parser.add_argument('--role', choices=['leader', 'follower'], default='leader', help='role (accepted but not used)')
+    parser.add_argument('--port', type=int, help='port number (overrides port in --addr)')
+    parser.add_argument('--engine', choices=['log', 'lsm'], default='log', help='storage engine hint (accepted but not used)')
     args = parser.parse_args()
+
+    # compute final addr (port overrides --addr if provided)
+    addr = args.addr
+    if args.port:
+        # if --addr contains a host, preserve it, otherwise use :<port>
+        if ':' in addr and addr.split(':', 1)[0] != '':
+            host = addr.split(':', 1)[0]
+            addr = f"{host}:{args.port}"
+        else:
+            addr = f":{args.port}"
+
     logging.basicConfig(level=logging.INFO, format='[dida] %(asctime)s %(message)s')
-    run(args.addr, args.data_dir)
+    run(addr, args.data_dir)
