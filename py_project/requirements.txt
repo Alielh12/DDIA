@@ -1,0 +1,2 @@
+# Only used for optional HTTP client (requests) in admin/replicate.
+requests
